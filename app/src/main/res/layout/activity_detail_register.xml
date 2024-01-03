@@ -7,58 +7,164 @@
     tools:context=".register.DetailRegisterActivity">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/ll_main"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <!-- Tambahkan ikon panah kembali -->
-        <ImageView
-            android:id="@+id/ivBackArrow"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/white">
+
+            <!-- Tambahkan ikon panah kembali -->
+            <ImageView
+                android:id="@+id/ivBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow"
+                android:layout_gravity="start"
+                android:paddingStart="16dp" />
+
+            <!-- Tambahkan teks detail di tengah -->
+            <TextView
+                android:id="@+id/tvDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Isi Detail Akunmu"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_gravity="center" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/horizontalLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back_arrow"
-            android:layout_gravity="start"
-            android:paddingStart="16dp"
-            android:contentDescription="@string/back_arrow_description" />
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:padding="16dp">
 
-        <!-- Tambahkan teks detail di tengah -->
-        <TextView
-            android:id="@+id/tvDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_text"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:layout_gravity="center" />
+            <TextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/tv_notelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nomor Ponsel"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
 
-    </androidx.appcompat.widget.Toolbar><androidx.appcompat.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary">
+            <EditText
+                android:id="@+id/et_notelp"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_form"
+                android:hint="+62"
+                android:paddingLeft="16dp"/>
 
-    <!-- Tambahkan ikon panah kembali -->
-    <ImageView
-        android:id="@+id/ivBackArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_back_arrow"
-        android:layout_gravity="start"
-        android:paddingStart="16dp"
-        android:contentDescription="@string/back_arrow_description" />
+            <TextView
+                android:id="@+id/tv_Email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat Email"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textSize="14sp"/>
 
-    <!-- Tambahkan teks detail di tengah -->
-    <TextView
-        android:id="@+id/tvDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Isi Detail Akunmu"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:layout_gravity="center" />
+            <EditText
+                android:id="@+id/et_Email"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_form"
+                android:hint="andrehutshon230@gmail.com"
+                android:paddingLeft="16dp"/>
 
-</androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:id="@+id/tv_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/et_nama"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_form"
+                android:hint="Nama Lengkap"
+                android:paddingLeft="16dp"/>
+
+            <TextView
+                android:id="@+id/tv_ktp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sesuai di KTP/Paspor/SIM"
+                android:layout_marginTop="4dp"/>
+
+
+            <TextView
+                android:id="@+id/tv_sandi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kata Sandi"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/et_sandi"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_form"
+                android:hint="Kata Sandi"
+                android:inputType="textPassword"
+                android:paddingLeft="16dp"
+                android:drawableRight="@drawable/ic_eye"
+                android:paddingRight="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Min. 7 Karakter berupa kombinasi angka, huruf besar, dan huruf kecil"
+                android:layout_marginTop="6dp"
+                android:textSize="14sp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rouded"
+                android:text="Buat Akun"
+                android:textColor="@color/white"
+                android:layout_marginTop="31dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:text="Dengan membuat akun kamu menyetujui Syarat, Ketentuan dan Kebijakan Privasi Kaboor"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
